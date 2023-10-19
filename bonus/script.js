@@ -7,10 +7,22 @@ function mahdiCampoMinato(){
 
 const btn = document.querySelector('.btn');
 
-btn.addEventListener('click', play); 
+btn.addEventListener("click", playGame); 
+
+/**
+ * playGame - avvia gioco
+ */
+
 
 function playGame(){
+
+    //numero bombe
+    const NUM_BOMBS = 16;
+    //array che contenente bombe
+    const bombs = [];
     const level = document.getElementById('choose').value;
+
+    let bomb = getRndInteger(1, numSquare);
 
     //numero di quadratini da generare
     let numSquare = selectLevel(level);
@@ -30,9 +42,10 @@ function playGame(){
         playground.append(square);
 
     }
+
 }
 
-/**
+    /**
  * Draw a square
  * @param {any} content 
  * @param {Number} squareWidth 
@@ -52,6 +65,11 @@ function drawSquare(content,squareWidth, fn){
     square.addEventListener('click',fn);
     return square;
 }
+
+/**
+ * EventListener function on square
+ * @returns {void}
+ */
 
 function drawClick(){
     if(!this) return;
@@ -74,9 +92,18 @@ function selectLevel(level){
             break;
         case 'easy':
             numSquare = 100;
+        }
+        return numSquare;
     }
-    return numSquare;
-}
 }
 
-
+function generateBombs(){
+        while (bombs.length < NUM_BOMBS){
+            let bomb = getRndInteger(1, numSquare);
+            console.log(bomb);
+            if(!bombs.includes(bomb)){
+                bombs.push(bomb);
+            }
+        }
+        console.log(bombs.length);
+    }
