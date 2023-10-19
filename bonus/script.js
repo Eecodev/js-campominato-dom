@@ -1,15 +1,10 @@
 const btn = document.querySelector('.btn');
 
 btn.addEventListener('click', () =>{
-    //numero squares da generare
-    
-    //prendo la griglia di gioco
-    const playground = document.getElementById('playground');
-    //prima di riempire svuoto tutto
-    playground.innerHTML = '';
 
     const level = document.getElementById('choose').value;
-
+    console.log(level);
+    //numero di quadratini da generare
     let numSquare;
     switch(level){
         case 'medium':
@@ -22,7 +17,10 @@ btn.addEventListener('click', () =>{
             numSquare = 100;
     }
     
-
+    //prendo la griglia di gioco
+    const playground = document.getElementById('playground');
+    //prima di riempire svuoto tutto
+    playground.innerHTML = '';
     //ciclo per stampare gli squares
     for(let i = 0; i < numSquare; i++){
         //genero square
