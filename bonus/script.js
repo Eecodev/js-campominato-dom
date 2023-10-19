@@ -5,8 +5,10 @@ mahdiCampoMinato();
 
 function mahdiCampoMinato(){
 
+    
+    //numero bombe
+    const NUM_BOMBS = 16;
     const btn = document.querySelector('.btn');
-
     btn.addEventListener("click", playGame); 
 
     /**
@@ -16,17 +18,15 @@ function mahdiCampoMinato(){
 
     function playGame(){
 
-        //numero bombe
-        const NUM_BOMBS = 16;
         //array che contenente bombe
         const bombs = [];
         const level = document.getElementById('choose').value;
-
-        let bomb = getRndInteger(1, numSquare);
-
         //numero di quadratini da generare
         let numSquare = selectLevel(level);
         console.log(numSquare);
+        let bomb = getRndInteger(1, numSquare);
+
+        
 
         //numero quadratini per lato
         const squareWidth = Math.sqrt(numSquare);
