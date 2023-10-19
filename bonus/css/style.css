@@ -1,0 +1,44 @@
+:root{
+    --ms-orange: #E67907;
+    --ms-yellow: #E5D401;
+    --ms-green: #24E502;
+    --ms-dark: #000000;
+    --ms-primary: #E12A12;
+    --ms-light: #ffffff;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#playground{
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    border: 2px solid white;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#choose{
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+.start-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+    background-color: aquamarine;
+}
