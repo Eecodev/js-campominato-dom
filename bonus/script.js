@@ -52,10 +52,11 @@ function drawSquare(content,squareWidth){
 }
 
 function drawClick(){
+    if(!this) return;
     //lo square diventa aquamarine
-    square.classList.add('active');
+    this.classList.add('active');
     //e il numero nero
-    square.style.color = 'black';
+    this.style.color = 'black';
     console.log(square.textContent);
 }
 
