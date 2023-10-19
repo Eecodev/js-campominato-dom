@@ -7,14 +7,16 @@ function mahdiCampoMinato(){
 
 const btn = document.querySelector('.btn');
 
-btn.addEventListener('click', () =>{
+btn.addEventListener('click', play); 
 
+function playGame(){
     const level = document.getElementById('choose').value;
 
     //numero di quadratini da generare
     let numSquare = selectLevel(level);
-
     console.log(numSquare);
+
+    //numero quadratini per lato
     const squareWidth = Math.sqrt(numSquare);
     //prendo la griglia di gioco
     const playground = document.getElementById('playground');
@@ -28,16 +30,16 @@ btn.addEventListener('click', () =>{
         playground.append(square);
 
     }
-});
+}
 
 /**
- * 
+ * Draw a square
  * @param {any} content 
  * @param {Number} squareWidth 
  * @returns {Object} il quadratino creato
  */
 
-function drawSquare(content,squareWidth){
+function drawSquare(content,squareWidth, fn){
     //creo nuovo elemento div
     const square = document.createElement('div');
     //aggiungo square 
@@ -47,7 +49,7 @@ function drawSquare(content,squareWidth){
     //stampo squares in html
     square.innerHTML = content;
     //al click..
-    square.addEventListener('click',drawClick);
+    square.addEventListener('click',fn);
     return square;
 }
 
@@ -57,7 +59,7 @@ function drawClick(){
     this.classList.add('active');
     //e il numero nero
     this.style.color = 'black';
-    console.log(square.textContent);
+    console.log(this.textContent);
 }
 
 function selectLevel(level){
