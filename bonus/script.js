@@ -4,18 +4,6 @@ btn.addEventListener('click', () =>{
 
     const level = document.getElementById('choose').value;
     console.log(level);
-    //numero di quadratini da generare
-    let numSquare;
-    switch(level){
-        case 'medium':
-            numSquare = 81;
-            break;
-        case 'hard':
-            numSquare = 49;
-            break;
-        case 'easy':
-            numSquare = 100;
-    }
     
     //prendo la griglia di gioco
     const playground = document.getElementById('playground');
@@ -48,4 +36,20 @@ function drawSquare(squareIndex,numSquare){
         console.log(square.textContent);
     });
     return square;
+}
+
+function selectLevel(level){
+    //numero di quadratini da generare
+    let numSquare;
+    switch(level){
+        case 'medium':
+            numSquare = 81;
+            break;
+        case 'hard':
+            numSquare = 49;
+            break;
+        case 'easy':
+            numSquare = 100;
+    }
+    return numSquare;
 }
