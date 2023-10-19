@@ -1,3 +1,10 @@
+
+
+
+mahdiCampoMinato();
+
+function mahdiCampoMinato(){
+
 const btn = document.querySelector('.btn');
 
 btn.addEventListener('click', () =>{
@@ -23,6 +30,13 @@ btn.addEventListener('click', () =>{
     }
 });
 
+/**
+ * 
+ * @param {any} content 
+ * @param {Number} squareWidth 
+ * @returns {Object} il quadratino creato
+ */
+
 function drawSquare(content,squareWidth){
     //creo nuovo elemento div
     const square = document.createElement('div');
@@ -30,11 +44,10 @@ function drawSquare(content,squareWidth){
     square.classList.add('square');
     square.style.width = `calc(100% / ${squareWidth})`;
     square.style.height = square.style.width;
-
     //stampo squares in html
-    square.innerHTML = squareIndex + 1;
-    //al click...
-    square.addEventListener('click');
+    square.innerHTML = content;
+    //al click..
+    square.addEventListener('click',drawClick);
     return square;
 }
 
@@ -61,3 +74,6 @@ function selectLevel(level){
     }
     return numSquare;
 }
+}
+
+
