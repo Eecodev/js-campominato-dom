@@ -12,15 +12,14 @@ btn.addEventListener('click', () =>{
 
     let numSquare;
     switch(level){
-    case 'medium':
-        numSquare = 81;
-        break;
-    case 'difficult':
-        numSquare = 49;
-        break;
-        case 'default':
-    numSquare = 100;
-        break;
+        case 'medium':
+            numSquare = 81;
+            break;
+        case 'hard':
+            numSquare = 49;
+            break;
+        case 'easy':
+            numSquare = 100;
     }
     
 
