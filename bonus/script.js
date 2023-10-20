@@ -8,6 +8,23 @@ function mahdiCampoMinato(){
     
     //numero bombe
     const NUM_BOMBS = 16;
+
+    //massimo numero di tentativi
+    let max_attempt;
+
+    //array delle bombe
+    let bombs;
+
+    //punteggio giocatore
+    let score;
+
+    //fine partita
+    let gameOver = false;
+
+    //div da mostrare a fine partita
+    const winEl = document.getElementById
+
+
     const btn = document.querySelector('.btn');
     btn.addEventListener("click", playGame); 
 
@@ -18,13 +35,17 @@ function mahdiCampoMinato(){
 
     function playGame(){
 
-        //array che contenente bombe
-        const bombs = [];
         const level = document.getElementById('choose').value;
         //numero di quadratini da generare
         let numSquare = selectLevel(level);
-        console.log(numSquare);
-        let bomb = getRndInteger(1, numSquare);
+        // console.log(numSquare);
+        // let bomb = getRndInteger(1, numSquare);
+
+        score = 0;
+        gameOver = false;
+
+        //array bombs
+        bombs = generateBombs(numSquare);
 
         
 
